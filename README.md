@@ -4,13 +4,22 @@ simple but effective script to revive wwan modules on openwrt and laptops
 
 ## Preamble
 
-[openwrt-lte-keep-alive](https://github.com/mchsk/openwrt-lte-keep-alive) Have been around since at least 4 years now, I see people forking it
-but the idea is just stupid. I didn't accept to just reboot the whole device, and insisted on debugging the issue more accurately. So I decided to write this script.
+[openwrt-lte-keep-alive](https://github.com/mchsk/openwrt-lte-keep-alive) Have been around since at least 4 years now,
+
+I see people forking it but the idea is just stupid.
+
+I didn't accept to just reboot the whole device,
+
+and insisted on debugging the issue more accurately.
+
+So I decided to write this script.
 
 ### why I like wwan
 
 wwan modules are great under my point of view, as ISP prices are usually lower than any other technology.
+
 they reach places where fiber and adsl are unavailable, and satellite is not worth it because you don't plan to stay in that place so long.
+
 wwan allows you to be **nomad** enjoy it, go take a shower in the rivers.
 
 wwan is great as fallback connection in environments meant to be reliable (and you can't just reboot the whole device!)
@@ -113,9 +122,13 @@ Sat Mar 19 03:17:02 UTC 2022 ONLINE quality:18,99 debug:(fun 1 | cgreg 0,1 | cga
 ```
 
 as you can see, it was offline at 3:00 I suppose due to an ISP cron. [^3]
+
 at 3:15 instead i issued `rmmod` manually to show this log.
+
 removing the module from the kernel doesn't interfere with the serial interface
+
 so you can still see that the module is still saying that the link to the cell is still active.
+
 then it backs online
 
 [^3]: online with active link uh? seems like a bug of linux kernel module then? or just the crappy modem I have?
