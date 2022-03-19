@@ -55,7 +55,7 @@ if installation steps looks difficult to you, then just use the scripts I linked
 
 1. ensure serial interface is available and test it
 
-1. copy the script
+1. copy the script. and adjust the parameters on your needs
 
 1. edit the crontab as follows to check every minute and keep a week of logging
 ```
@@ -66,6 +66,7 @@ if installation steps looks difficult to you, then just use the scripts I linked
 ### example of serial interface test
 
 first of all make sure the ttyUSB device is created.
+
 if it isn't, do
 ```
 
@@ -79,6 +80,11 @@ root@OpenWrt:~# dmesg | grep ttyUSB
 [   25.215966] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB1
 [   25.243125] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB2
 [   25.270292] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB3
+```
+it should be clear, take the id of the usb device...
+
+in this case multiple devices have been created, I see only `1` and `2` are working with at commands
+```
 root@OpenWrt:~# echo "ATI" | socat - /dev/ttyUSB1,raw,echo=0,crlf,nonblock,b115200
 ATI
 Manufacturer: BroadMobi
