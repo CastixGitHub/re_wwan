@@ -18,7 +18,9 @@ wwan is great as fallback connection in environments meant to be reliable (and y
 ## Description
 I'm stealing this
 ```
-If your WAN interface using WWAN/QMI/NCM/3G protocol with your modem is working but your connection drops from time to time, you have just found the safe heaven. This script make sure your router is online, managing your interface or router itself.
+If your WAN interface using WWAN/QMI/NCM/3G protocol with your modem is working
+but your connection drops from time to time, you have just found the safe heaven.
+This script make sure your router is online, managing your interface or router itself.
 ```
 
 ### how it works
@@ -110,13 +112,13 @@ Sat Mar 19 03:17:02 UTC 2022 ONLINE quality:18,99 debug:(fun 1 | cgreg 0,1 | cga
 
 ```
 
-as you can see, it was offline at 3:00 I suppose due to an ISP cron. [^1]
+as you can see, it was offline at 3:00 I suppose due to an ISP cron. [^3]
 at 3:15 instead i issued `rmmod` manually to show this log.
 removing the module from the kernel doesn't interfere with the serial interface
 so you can still see that the module is still saying that the link to the cell is still active.
 then it backs online
 
-[^1]: online with active link uh? seems like a bug of linux kernel module then? or just the crappy modem I have?
+[^3]: online with active link uh? seems like a bug of linux kernel module then? or just the crappy modem I have?
 
 ## Contributing
 Thank you if you do
@@ -138,3 +140,6 @@ the baudrate you're using is wrong, try to find the manual for your modem or jus
 - after some bad command ttyUSB device became weird, doing `file /dev/ttyUSB1` gets Killed by the OOM and I can't socat anymore
 
 just do `rmmod option1` and `insmod option1`
+
+
+## markdown notes
