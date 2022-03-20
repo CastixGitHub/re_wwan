@@ -57,6 +57,10 @@ if installation steps looks difficult to you, then just use the scripts I linked
 
 1. copy the script. and adjust the parameters on your needs
 
+1. give executable rights
+
+1. test it runs
+
 1. edit the crontab as follows to check every minute and keep a week of logging
 ```
 * * * * * /root/re_wwan.sh >> /tmp/re_wwan.log 2>&1
@@ -149,6 +153,10 @@ I also would like to acknowledge rico that made me want to live where wwan is ma
 ## License
 GPLv3+
 
+## manuals
+
+[3GPP TS 27.007](https://web.archive.org/web/20220320205631/https://www.arib.or.jp/english/html/overview/doc/STD-T63v9_30/5_Appendix/Rel10/27/27007-a70.pdf)
+[BM817C](https://web.archive.org/web/20220320174125/https://fccid.io/2AON8-BM817C/User-Manual/BM817C-user-manual-V1-1-3781756.pdf)
 
 ## troubleshoot messing with AT
 
